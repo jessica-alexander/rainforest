@@ -5,15 +5,20 @@
   </div>
 
   <div class="field">
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
       <%= f.label :description %><br>
       <%= f.text_area :description %>
   </div>
 
   <div class="field">
         <%= f.label "Price" %><br>
-        <%= f.number_field :price_in_cents %>
+        <%#= f.number_field :price_in_cents %>
+        <%= f.number_field :price_in_cents, value: number_to_currency(f.object.price_in_cents.to_f, delimiter: '', unit: ''), step: :any %>
   </div><br>
-
   <div class="actions">
     <%= f.submit %>
   </div>

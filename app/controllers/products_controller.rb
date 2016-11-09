@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -43,6 +43,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price_in_cents)
+    params.require(:product).permit(:name, :description, :price_in_cents, :url)
   end
 end
