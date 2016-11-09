@@ -6,13 +6,13 @@
 
   <div class="field">
       <%= f.label :description %><br>
-      <%= f.text_field :description %>
+      <%= f.text_area :description %>
   </div>
 
   <div class="field">
-        <%= f.label :price_in_cents %><br>
-        <%= f.text_field :price_in_cents %>
-  </div>
+        <%= f.label "Price" %><br>
+        <%= f.number_field :price_in_cents %>
+  </div><br>
 
   <div class="actions">
     <%= f.submit %>
